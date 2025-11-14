@@ -1,33 +1,88 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>测试页面</title>
+    <title>Go Green - Environmental Awareness</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ef;
+            color: #333;
         }
-        .message {
-            font-size: 3rem;
-            color: #555;
+        header {
             text-align: center;
-            animation: pulse 2s infinite;
+            padding: 2em 0;
+            background-color: #4CAF50;
+            color: white;
         }
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
+        .content {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .text-section, .image-gallery {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        .text-section h1, .text-section p {
+            margin: 0 0 1em;
+        }
+        .image-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform .2s;
+        }
+        .image-gallery img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <div class="message">测试中</div>
+<header>
+    <h1>Embrace the Earth</h1>
+    <p>Join us in our mission to protect and preserve our planet for future generations.</p>
+</header>
+
+<div class="content">
+    <div class="text-section">
+        <h1>Why Go Green?</h1>
+        <p>Discover the importance of environmental conservation and how small changes can make a big difference.</p>
+    </div>
+    <div class="image-gallery">
+        <!-- 示例图片1 -->
+        <img src="https://www.publicdomainpictures.net/pictures/270000/nahled/save-earth-1479284792cfe.jpg" alt="Green Earth">
+        <!-- 示例图片2 -->
+        <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/recycle-symbol.jpg" alt="Recycle Symbol">
+        <!-- 更多图片可以类似地添加 -->
+    </div>
+</div>
+
+<script>
+    // 动态加载更多环保主题图片
+    const imageGallery = document.querySelector('.image-gallery');
+    const additionalImages = [
+        "https://www.publicdomainpictures.net/pictures/100000/nahled/earth-day.jpg",
+        "https://www.publicdomainpictures.net/pictures/190000/nahled/eco-friendly.jpg"
+    ];
+
+    additionalImages.forEach(src => {
+        const imgElement = document.createElement('img');
+        imgElement.src = src;
+        imgElement.alt = 'Additional Eco Image';
+        imgElement.style.width = '100%';
+        imgElement.style.borderRadius = '8px';
+        imgElement.style.transition = 'transform .2s';
+        imgElement.onmouseover = () => imgElement.style.transform = 'scale(1.05)';
+        imgElement.onmouseout = () => imgElement.style.transform = 'scale(1)';
+        imageGallery.appendChild(imgElement);
+    });
+</script>
+
 </body>
 </html>
